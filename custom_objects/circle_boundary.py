@@ -21,6 +21,9 @@ class Circle_Boundary:
     def draw(self, screen, pygame):
         pygame.draw.circle(screen, self.color, self.pos, self.radius, width=self.line_width)
 
+    def in_bounds(self, point):
+        return distance(point, self.pos) < self.radius - 10
+
 
 def distance(p1, p2):
     return math.sqrt((p1[0]-p2[0])**2 + (p1[1]-p2[1])**2)
